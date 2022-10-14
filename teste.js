@@ -14,6 +14,7 @@ async function sorteia() {
 
         var numero = Math.floor(Math.random(60)*60+1);
         if (lista_dezenas.includes(numero) == false){
+            
             lista_dezenas.push(numero);
             contador = contador + 1;
     
@@ -23,9 +24,7 @@ async function sorteia() {
         
       
         appendNumber(i, lista_dezenas)
-        await time(0.7).then(function(data){
-            console.log(data);
-        })
+        await time(0.7)
     }
         
 }    
@@ -46,6 +45,6 @@ function appendNumber(index, lista){
 function time(seconds){
     let mili = seconds*1000;
     return new Promise(res => 
-        setTimeout(res(`promise resolvida após ${mili} ms `), mili)
+        setTimeout(res, mili)
     )
 }
