@@ -28,7 +28,7 @@ async function sorteia() {
         
       
         appendNumber(i, lista_dezenas)
-        await time(0.7)
+        await time(0.3)
     }
         
 }    
@@ -36,7 +36,7 @@ async function sorteia() {
 function appendNumber(index, lista){
 
     
-    console.log('inserido a dezena '+(index+1))
+    
     var li = document.createElement('li');
     li.classList.add('rounded-full', 'bg-yellow-500', 'py-3', 'px-4')
     li.innerText = `${lista[index]}`;

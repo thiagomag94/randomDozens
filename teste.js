@@ -12,7 +12,11 @@ async function sorteia() {
 
     while (contador<6) {
 
+        
         var numero = Math.floor(Math.random(60)*60+1);
+        if (numero < 10) {
+            numero = '0' + numero.toString();
+        } 
         if (lista_dezenas.includes(numero) == false){
             
             lista_dezenas.push(numero);
@@ -23,18 +27,16 @@ async function sorteia() {
     for(var i=0; i < lista_dezenas.length; i++){
         
       
-        appendNumber(i, lista_dezenas)
-        await time(0.7)
+        appendNumber(i, lista_dezenas);
+        await time(0.4);
     }
         
 }    
 
 function appendNumber(index, lista){
-
     
-    console.log('inserido a dezena '+(index+1))
     var li = document.createElement('li');
-    li.classList.add('rounded-full', 'bg-yellow-500', 'py-3', 'px-4')
+    li.classList.add('rounded-full', 'bg-yellow-500', 'py-3', 'px-4');
     li.innerText = `${lista[index]}`;
     ul.append(li)
 }
